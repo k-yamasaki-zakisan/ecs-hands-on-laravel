@@ -1,3 +1,4 @@
 .DS_Store
 ecs-fargate-hands-on_v1.pdf
 .vscode
+ecs-task-definition-for-command.json
