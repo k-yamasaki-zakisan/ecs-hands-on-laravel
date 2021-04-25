@@ -1,0 +1,17 @@
+# テストコマンド
+$ aws ecs run-task \
+--cluster ecs-hands-on \
+--task-definition ecs-hands-on-for-command \
+--overrides '{"containerOverrides": [{"name":"laravel","command": ["s›
+›h","-c","php artisan print:helloworld"]}]}' \
+--launch-type FARGATE \
+--network-configuration "awsvpcConfiguration={subnets=[<作成済みのサブ ネットID>],securityGroups=[<作成済みのセキュリティグループID>],assignPublicIp=ENABLED}"
+
+# laravelデプロイ実行
+$ aws ecs create-service \
+--cluster ecs-hands-on \
+--service-name ecs-hands-on-laravel \
+--task-definition ecs-hands-on-for-web \
+--launch-type FARGATE \
+--desired-count 1 \
+--network-configuration "awsvpcConfiguration={subnets=[<作成済みのサブ ネットID>],securityGroups=[<作成済みのセキュリティグループID>],assignPublicIp=ENABLED}"

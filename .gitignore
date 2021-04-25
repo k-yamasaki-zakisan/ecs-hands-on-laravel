@@ -3,3 +3,4 @@ ecs-fargate-hands-on_v1.pdf
 .vscode
 ecs-task-definition-for-command.json
 ecs-task-definition-for-web.json
+ecs-task-command-memo.txt
