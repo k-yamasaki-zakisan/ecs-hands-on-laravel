@@ -12,7 +12,7 @@ class HelloWorld extends Command
      * @var string
      */
     // protected $signature = 'command:name';
-    protected $signature = 'print:hello world';
+    protected $signature = 'print:helloworld';
 
     /**
      * The console command description.
