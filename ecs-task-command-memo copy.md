@@ -45,3 +45,15 @@ admin権限を持たせて一時的に対応した
 参考:
 https://dev.classmethod.jp/articles/iam-pass-role/
 
+## ALBアクセスのチェックのサービス作成
+```
+$ aws ecs create-service \
+--cluster ecs-hands-on \
+--service-name ecs-hands-on-laravel \
+--task-definition ecs-hands-on-for-web \
+--launch-type FARGATE \
+--load-balancers '[{"containerName":"nginx","containerPort":80,"targetGroupArn":"<ターゲットグループARN>"}]' \
+--desired-count 2 \
+--network-configuration "awsvpcConfiguration={subnets=[<サブネット ID1>,<サブネットID2>],securityGroups=[<セキュリティグループID>],assignPublicIp=ENABLED}"
+```
+
